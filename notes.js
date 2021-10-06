@@ -77,16 +77,17 @@ const createNote = (note) => {
     const maxId = currentLastNote.id
     const idForNewNote = maxId + 1
     note.id = idForNewNote
+    note.date = Date()
     notes.push(note)
 }
 
 const moreNewerNote = {
     subject: "Javascript Day 3",
-    date: "10/6/2021",
     feeling: "Adding arrow function and variable syntax to my list to study tonight. I'm feeling a bit confused. Had to google function syntax for the previous activity."
 }
 
 createNote(moreNewerNote)
+
 
 
 console.log(notes)
