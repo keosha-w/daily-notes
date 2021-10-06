@@ -71,16 +71,22 @@ notes.push(newNote)
 //     }
 // }
 
-const createNote = (note, id) => {
-    note.id = id
+const createNote = (note) => {
+    const lastIndex = notes.length - 1
+    const currentLastNote = notes[lastIndex]
+    const maxId = currentLastNote.id
+    const idForNewNote = maxId + 1
+    note.id = idForNewNote
     notes.push(note)
 }
 
 const moreNewerNote = {
-    subject: "Javascript Day 2",
+    subject: "Javascript Day 3",
     date: "10/6/2021",
     feeling: "Adding arrow function and variable syntax to my list to study tonight. I'm feeling a bit confused. Had to google function syntax for the previous activity."
 }
 
-createNote(moreNewerNote, 7)
+createNote(moreNewerNote)
+
+
 console.log(notes)
