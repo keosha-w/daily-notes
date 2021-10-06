@@ -65,8 +65,22 @@ const newNote = {
 
 notes.push(newNote)
 
-for (const note of notes) {
-    if (note.subject === searchTerm) {
-        console.log(note.date)
-    }
+// for (const note of notes) {
+//     if (note.subject === searchTerm) {
+//         console.log(note.date)
+//     }
+// }
+
+const createNote = (note, id) => {
+    note.id = id
+    notes.push(note)
 }
+
+const moreNewerNote = {
+    subject: "Javascript Day 2",
+    date: "10/6/2021",
+    feeling: "Adding arrow function and variable syntax to my list to study tonight. I'm feeling a bit confused. Had to google function syntax for the previous activity."
+}
+
+createNote(moreNewerNote, 7)
+console.log(notes)
